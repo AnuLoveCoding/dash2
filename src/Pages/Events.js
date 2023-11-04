@@ -3,6 +3,7 @@ import React from 'react'
 function Events() {
   return (
     <div>
+        
     <header>
         <h1>Events Guide: Making the Most of Every Occasion</h1>
         <p>Published on: [Insert Date]</p>
