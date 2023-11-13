@@ -42,7 +42,9 @@ import MySyllabus from "./MySyllabus";
 import MyLeave from "./MyLeave";
 import Daily from "./Daily";
 import Logout from './Logout';
-import SideComponent from "../SideComponent"
+import SideComponent from "../SideComponent";
+import Appp from "../bar";
+
 
 
 const drawerWidth = 240;
@@ -214,7 +216,7 @@ function ResponsiveDrawer(props) {
         }}
       >
         <Toolbar>
-          
+
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -224,14 +226,13 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
 
-          <Typography variant="h6" noWrap component="div">
-            Ace School App Documentation
-          </Typography>
+          <Typography variant="h6" noWrap component="div"> Ace School App Documentation </Typography>
           
           <Button variant="SearchIcon" color='white'  onClick={() => {alert('SearchIcon clicked')}}><SearchIcon /></Button>
 
           <Button variant="LiveHelpIcon" color='white' onClick={() => {alert('LiveHelpIcon clicked')}}><LiveHelpIcon /></Button>
-
+        
+          
         </Toolbar>
       </AppBar>
       <Box
