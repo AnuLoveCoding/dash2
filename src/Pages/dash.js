@@ -13,6 +13,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import LiveHelpIcon from '@mui/icons-material/LiveHelp';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import HomeIcon from '@mui/icons-material/Home';
@@ -64,10 +66,12 @@ function ResponsiveDrawer(props) {
               <ListItemIcon>
                 <HomeIcon />
               </ListItemIcon>
-              <ListItemText  >Home</ListItemText>
+              <ListItemText>Home</ListItemText>
             </ListItemButton>
         </ListItem>
+        
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/MyResults")}>
             <ListItemButton>
               <ListItemIcon>
@@ -76,7 +80,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >My Student Results</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/MyStudent")}>
             <ListItemButton>
               <ListItemIcon>
@@ -85,7 +91,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >My Student</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/MyClasses")}>
             <ListItemButton>
               <ListItemIcon>
@@ -94,7 +102,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >My Classes</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/Assignment")}>
             <ListItemButton>
               <ListItemIcon>
@@ -103,7 +113,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >Assignment</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/Notification")}>
             <ListItemButton>
               <ListItemIcon>
@@ -112,7 +124,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >Notification</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/Events")}>
             <ListItemButton>
               <ListItemIcon>
@@ -121,7 +135,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >Events</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/Holidays")}>
             <ListItemButton>
               <ListItemIcon>
@@ -130,7 +146,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >Holidays</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/MySyllabus")}>
             <ListItemButton>
               <ListItemIcon>
@@ -139,7 +157,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >My Syllabus</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/MyLeave")}>
             <ListItemButton>
               <ListItemIcon>
@@ -148,7 +168,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >My Leave Requests</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/Daily")}>
             <ListItemButton>
               <ListItemIcon>
@@ -157,7 +179,9 @@ function ResponsiveDrawer(props) {
               <ListItemText  >Daily Timing</ListItemText>
             </ListItemButton>
         </ListItem>
+
         <Divider />
+
         <ListItem  disablePadding onClick = {() => navigate("/Logout")}>
             <ListItemButton>
               <ListItemIcon>
@@ -180,6 +204,10 @@ function ResponsiveDrawer(props) {
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
+          backgroundColor:'#25566f',
+          // display:'flex',
+          flexDirection:'row',
+          justifyContent:'space-between',
         }}
       >
         <Toolbar>
@@ -188,13 +216,29 @@ function ResponsiveDrawer(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
+            sx={{ mr: 2, display: { sm: 'none' } }}>
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            App Documentation
+            Ace School App Documentation
           </Typography>
+          
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            sx={{ mr: 2, float:'right'}} >
+            <SearchIcon />
+          </IconButton>
+
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            sx={{ mr: 5, float:'right'}} >
+            <LiveHelpIcon />
+          </IconButton>
+
         </Toolbar>
       </AppBar>
       <Box
@@ -236,7 +280,7 @@ function ResponsiveDrawer(props) {
         <Toolbar />
         <Routes >
             <Route exact path = "/" element = {<Home />}></Route>
-            <Route  path = "/MyResults" element = {< MyResults />}></Route>
+            <Route  path = "/myResults" element = {< MyResults />}></Route>
             <Route  path = "/MyStudent" element = {<MyStudent />}></Route>
             <Route  path = "/MyClasses" element = {<MyClasses />}></Route>
             <Route  path = "/Assignment" element = {<Assignment />}></Route>
