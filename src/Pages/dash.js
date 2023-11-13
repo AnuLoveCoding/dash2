@@ -41,6 +41,7 @@ import MySyllabus from "./MySyllabus";
 import MyLeave from "./MyLeave";
 import Daily from "./Daily";
 import Logout from './Logout';
+import SideComponent from "../SideComponent"
 
 
 const drawerWidth = 240;
@@ -57,10 +58,12 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <div>
+      <SideComponent />
       <Toolbar />
+      
       <Divider />
       <List>
-
+       
         <ListItem  disablePadding onClick = {() => navigate ("/")}>
             <ListItemButton>
               <ListItemIcon>
@@ -69,7 +72,7 @@ function ResponsiveDrawer(props) {
               <ListItemText>Home</ListItemText>
             </ListItemButton>
         </ListItem>
-        
+
         <Divider />
 
         <ListItem  disablePadding onClick = {() => navigate("/MyResults")}>
@@ -275,23 +278,22 @@ function ResponsiveDrawer(props) {
       </Box>
       <Box
         component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
+        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}>
         <Toolbar />
-        <Routes >
+          <Routes >
             <Route exact path = "/" element = {<Home />}></Route>
             <Route  path = "/myResults" element = {< MyResults />}></Route>
-            <Route  path = "/MyStudent" element = {<MyStudent />}></Route>
-            <Route  path = "/MyClasses" element = {<MyClasses />}></Route>
-            <Route  path = "/Assignment" element = {<Assignment />}></Route>
-            <Route  path = "/Notification" element = {<Notification />}></Route>
-            <Route  path = "/Events" element = {<Events />}></Route>
-            <Route  path = "/Holidays" element = {<Holidays />}></Route>
-            <Route  path = "/MySyllabus" element = {<MySyllabus />}></Route>
-            <Route  path = "/MyLeave" element = {<MyLeave />}></Route>
-            <Route  path = "/Daily" element = {<Daily />}></Route>
-            <Route  path = "/Logout" element = {<Logout />}></Route>
-        </Routes>
+            <Route  path = "/myStudent" element = {<MyStudent />}></Route>
+            <Route  path = "/myClasses" element = {<MyClasses />}></Route>
+            <Route  path = "/assignment" element = {<Assignment />}></Route>
+            <Route  path = "/notification" element = {<Notification />}></Route>
+            <Route  path = "/events" element = {<Events />}></Route>
+            <Route  path = "/holidays" element = {<Holidays />}></Route>
+            <Route  path = "/mySyllabus" element = {<MySyllabus />}></Route>
+            <Route  path = "/myLeave" element = {<MyLeave />}></Route>
+            <Route  path = "/daily" element = {<Daily />}></Route>
+            <Route  path = "/logout" element = {<Logout />}></Route>
+          </Routes>
       </Box>
     </Box>
   );
