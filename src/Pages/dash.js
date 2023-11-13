@@ -7,6 +7,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -60,7 +61,6 @@ function ResponsiveDrawer(props) {
     <div>
       <SideComponent />
       <Toolbar />
-      
       <Divider />
       <List>
        
@@ -208,12 +208,13 @@ function ResponsiveDrawer(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
           backgroundColor:'#25566f',
-          // display:'flex',
+          display:'flex',
           flexDirection:'row',
           justifyContent:'space-between',
         }}
       >
         <Toolbar>
+          
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -222,25 +223,14 @@ function ResponsiveDrawer(props) {
             sx={{ mr: 2, display: { sm: 'none' } }}>
             <MenuIcon />
           </IconButton>
+
           <Typography variant="h6" noWrap component="div">
             Ace School App Documentation
           </Typography>
           
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            sx={{ mr: 2, float:'right'}} >
-            <SearchIcon />
-          </IconButton>
+          <Button variant="SearchIcon" color='white'  onClick={() => {alert('SearchIcon clicked')}}><SearchIcon /></Button>
 
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            sx={{ mr: 5, float:'right'}} >
-            <LiveHelpIcon />
-          </IconButton>
+          <Button variant="LiveHelpIcon" color='white' onClick={() => {alert('LiveHelpIcon clicked')}}><LiveHelpIcon /></Button>
 
         </Toolbar>
       </AppBar>
