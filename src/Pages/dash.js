@@ -43,7 +43,6 @@ import MyLeave from "./MyLeave";
 import Daily from "./Daily";
 import Logout from './Logout';
 import SideComponent from "../SideComponent";
-import Appp from "../bar";
 
 
 
@@ -228,9 +227,9 @@ function ResponsiveDrawer(props) {
 
           <Typography variant="h6" noWrap component="div"> Ace School App Documentation </Typography>
           
-          <Button variant="SearchIcon" color='white'  onClick={() => {alert('SearchIcon clicked')}}><SearchIcon /></Button>
+          <Button variant="SearchIcon" color='white'  onClick={() => {alert('SearchIcon clicked')}}><SearchIcon />Search</Button>
 
-          <Button variant="LiveHelpIcon" color='white' onClick={() => {alert('LiveHelpIcon clicked')}}><LiveHelpIcon /></Button>
+          <Button variant="LiveHelpIcon" color='white' onClick={() => {alert('LiveHelpIcon clicked')}}><LiveHelpIcon />Help Support</Button>
         
           
         </Toolbar>
