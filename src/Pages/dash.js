@@ -43,7 +43,8 @@ import MyLeave from "./MyLeave";
 import Daily from "./Daily";
 import Logout from './Logout';
 import SideComponent from "../SideComponent";
-
+import DarkMode from './DarkMode';
+import TungstenIcon from '@mui/icons-material/Tungsten';
 
 
 const drawerWidth = 240;
@@ -52,19 +53,25 @@ function ResponsiveDrawer(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+  const [darkMode,setDarkMode] = React.useState(false);
+
   const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  const themeToggle = () => {
+    setDarkMode(!darkMode);
+    console.log(darkMode) 
+  };
+
   const drawer = (
     <div>
-      <SideComponent />
+      <SideComponent style = {darkMode?'Yes Dark' :'No Dark Mode'} />
       <Toolbar />
       <Divider />
       <List>
-       
         <ListItem  disablePadding onClick = {() => navigate ("/")}>
             <ListItemButton>
               <ListItemIcon>
@@ -225,11 +232,16 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
 
-          <Typography variant="h6" noWrap component="div"> Ace School App Documentation </Typography>
+          <Typography variant="h6" noWrap component="div"> Ace School App Documentation {darkMode?'Yes Dark':'No Dark Mode'} </Typography>
           
           <Button variant="SearchIcon" color='white'  onClick={() => {alert('SearchIcon clicked')}}><SearchIcon />Search</Button>
 
-          <Button variant="LiveHelpIcon" color='white' onClick={() => {alert('LiveHelpIcon clicked')}}><LiveHelpIcon />Help Support</Button>
+          <Button variant="LiveHelpIcon" color='white' style  ={{borderRadius: "10px", border :"1px solid white" , fontSize:'12px'}}  onClick={() => {alert('LiveHelpIcon clicked')}}>Raise Ticket</Button>
+
+          <Button variant="LiveHelpIcon" color='white' onClick={themeToggle}> Set Theme</Button>
+
+          {/* <IconButton color="white" aria-label="open drawer"edge="start"sx={{ mr: 2, display: {sm: 'none' } }}
+           onClick = {themeToggle}><TungstenIcon /> </IconButton> */}
         
           
         </Toolbar>
