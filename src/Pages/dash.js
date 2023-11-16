@@ -67,7 +67,7 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div>
+    <div   style={ darkMode ? { backgroundColor:'black', color: 'white'} : {backgroundColor:'white', color: 'black'}   } >
       <SideComponent style = {darkMode?'Yes Dark' :'No Dark Mode'} />
       <Toolbar />
       <Divider />
@@ -75,7 +75,7 @@ function ResponsiveDrawer(props) {
         <ListItem  disablePadding onClick = {() => navigate ("/")}>
             <ListItemButton>
               <ListItemIcon>
-                <HomeIcon />
+                <HomeIcon  style={ darkMode ? { backgroundColor:'black', color: 'white'} : {backgroundColor:'white', color: 'black'}   }/>
               </ListItemIcon>
               <ListItemText>Home</ListItemText>
             </ListItemButton>
@@ -86,8 +86,8 @@ function ResponsiveDrawer(props) {
         <ListItem  disablePadding onClick = {() => navigate("/MyResults")}>
             <ListItemButton>
               <ListItemIcon>
-                <AssessmentIcon />
-              </ListItemIcon>
+                <AssessmentIcon  style={{color:"green"}}/>
+              </ListItemIcon >
               <ListItemText  >My Student Results</ListItemText>
             </ListItemButton>
         </ListItem>
@@ -121,7 +121,7 @@ function ResponsiveDrawer(props) {
               <ListItemIcon>
                 <AssignmentIcon />
               </ListItemIcon>
-              <ListItemText  >Assignment</ListItemText>
+              <ListItemText>Assignment</ListItemText>
             </ListItemButton>
         </ListItem>
 
@@ -208,7 +208,7 @@ function ResponsiveDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={darkMode?{ backgroundColor:'black', color: 'white',display:'flex'} : {backgroundColor:'white', color: 'black',display:'flex'}}>
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -221,6 +221,7 @@ function ResponsiveDrawer(props) {
           justifyContent:'space-between',
         }}
       >
+
         <Toolbar>
 
           <IconButton
